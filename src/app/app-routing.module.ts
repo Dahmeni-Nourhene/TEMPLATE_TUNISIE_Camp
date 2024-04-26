@@ -5,6 +5,8 @@ import { ListFeedbackComponent } from './feedback/list-feedback/list-feedback.co
 import { ViewFeedbackComponent } from './feedback/view-feedback/view-feedback.component';
 import { AddFeedbackComponent } from './feedback/add-feedback/add-feedback.component';
 import { EditFeedbackComponent } from './feedback/edit-feedback/edit-feedback.component';
+import { ReservationListComponent } from './reservation/reservation-list/reservation-list.component';
+import { ReservationAddComponent } from './reservation/reservation-add/reservation-add.component';
 
 
 // Importez vos composants
@@ -33,8 +35,8 @@ export const Approutes: Routes = [
       { path: 'view-feedback/:id', component: ViewFeedbackComponent },
       { path: 'add-feedback', component: AddFeedbackComponent },
       { path: 'edit-feedback/:id', component: EditFeedbackComponent },
-     
-      
+      { path: 'list-reservation', component: ReservationListComponent },
+      { path: 'add-reservation', component: ReservationAddComponent },
     ]
   },
   {

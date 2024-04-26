@@ -13,6 +13,8 @@ import { ListFeedbackComponent } from './feedback/list-feedback/list-feedback.co
 import { ViewFeedbackComponent } from './feedback/view-feedback/view-feedback.component';
 import { AddFeedbackComponent } from './feedback/add-feedback/add-feedback.component';
 import { EditFeedbackComponent } from './feedback/edit-feedback/edit-feedback.component';
+import { ReservationListComponent } from './reservation/reservation-list/reservation-list.component';
+import { ReservationAddComponent } from './reservation/reservation-add/reservation-add.component';
 
 
 @NgModule({
@@ -23,6 +25,8 @@ import { EditFeedbackComponent } from './feedback/edit-feedback/edit-feedback.co
     ViewFeedbackComponent,
     AddFeedbackComponent,
     EditFeedbackComponent,
+    ReservationListComponent,
+    ReservationAddComponent,
    
    
   ],

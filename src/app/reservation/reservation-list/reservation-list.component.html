@@ -1,0 +1,56 @@
+
+  <div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-body">
+                <div class="text-center">
+                    <h2>Explore Reservation !!</h2>
+                    <div class="row justify-content-center">
+                        <button class="btn btn-primary" >Create a new Reservation</button>
+                    </div>
+                </div><br/>
+                <br/>
+                <h4 class="card-title">Reservation</h4>
+                <div class="table-responsive">
+                    <table class="table table-hover align-middle text-nowrap table-bordered">
+                        <thead>
+                            <tr>
+                              
+                                <th class="text-dark font-medium fs-4">nbPersonnes</th>
+                                <th class="text-dark font-medium fs-4">montant</th>
+                                <th class="text-dark font-medium fs-4">dateArrivee</th>
+                                <th class="text-dark font-medium fs-4">dateDepart</th>
+                                <th class="text-dark font-medium fs-4">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr  *ngFor="let reservation of reservations">
+                                
+                              <td>
+                                {{reservation.nbPersonnes}}
+                            </td>
+                                <td>
+                                    {{reservation.montant}}
+                                </td>
+                                <td>
+                                    {{reservation.dateArrivee}}
+                                </td>
+                                <td>
+                                    {{reservation.dateDepart}}
+                                </td>
+                                <td>
+                                    <button class="btn btn-sm btn-primary me-2" >Edit</button>
+                                    <button class="btn btn-sm btn-danger" (click)="deleteReservation(reservation)">Delete</button>
+
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
