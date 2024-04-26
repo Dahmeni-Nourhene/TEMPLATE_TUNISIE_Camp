@@ -1,7 +1,14 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-
 import { FullComponent } from './layouts/full/full.component';
+import { ListFeedbackComponent } from './feedback/list-feedback/list-feedback.component';
+import { ViewFeedbackComponent } from './feedback/view-feedback/view-feedback.component';
+import { AddFeedbackComponent } from './feedback/add-feedback/add-feedback.component';
+import { EditFeedbackComponent } from './feedback/edit-feedback/edit-feedback.component';
+
+
+// Importez vos composants
+
 
 export const Approutes: Routes = [
   {
@@ -20,7 +27,14 @@ export const Approutes: Routes = [
       {
         path: 'component',
         loadChildren: () => import('./component/component.module').then(m => m.ComponentsModule)
-      }
+      },
+      // Ajoutez vos routes ici
+      { path: 'list-feedback', component: ListFeedbackComponent },
+      { path: 'view-feedback/:id', component: ViewFeedbackComponent },
+      { path: 'add-feedback', component: AddFeedbackComponent },
+      { path: 'edit-feedback/:id', component: EditFeedbackComponent },
+     
+      
     ]
   },
   {
@@ -28,3 +42,9 @@ export const Approutes: Routes = [
     redirectTo: '/starter'
   }
 ];
+
+@NgModule({
+  imports: [RouterModule.forRoot(Approutes)],
+  exports: [RouterModule]
+})
+export class AppRoutingModule { }

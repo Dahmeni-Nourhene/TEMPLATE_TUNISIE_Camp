@@ -1,31 +1,30 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {
-  CommonModule, LocationStrategy,
-  PathLocationStrategy
-} from '@angular/common';
+import { CommonModule, LocationStrategy, PathLocationStrategy } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule, HttpClient } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 import { Routes, RouterModule } from '@angular/router';
-
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-
-import { FullComponent } from './layouts/full/full.component';
-
-
-import { NavigationComponent } from './shared/header/navigation.component';
-import { SidebarComponent } from './shared/sidebar/sidebar.component';
-
 import { Approutes } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SpinnerComponent } from './shared/spinner.component';
+import { ListFeedbackComponent } from './feedback/list-feedback/list-feedback.component';
+import { ViewFeedbackComponent } from './feedback/view-feedback/view-feedback.component';
+import { AddFeedbackComponent } from './feedback/add-feedback/add-feedback.component';
+import { EditFeedbackComponent } from './feedback/edit-feedback/edit-feedback.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     SpinnerComponent,
+    ListFeedbackComponent,
+    ViewFeedbackComponent,
+    AddFeedbackComponent,
+    EditFeedbackComponent,
+   
+   
   ],
   imports: [
     CommonModule,
@@ -36,15 +35,9 @@ import { SpinnerComponent } from './shared/spinner.component';
     HttpClientModule,
     NgbModule,
     RouterModule.forRoot(Approutes, { useHash: false }),
-    FullComponent,
-    NavigationComponent,
-    SidebarComponent,
   ],
   providers: [
-    {
-      provide: LocationStrategy,
-      useClass: PathLocationStrategy
-    },
+    { provide: LocationStrategy, useClass: PathLocationStrategy },
   ],
   bootstrap: [AppComponent]
 })

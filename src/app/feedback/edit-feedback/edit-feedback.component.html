@@ -1,0 +1,26 @@
+<!-- Formulaire d'édition -->
+<br/>
+<form (ngSubmit)="onSubmit()" [formGroup]="editForm">
+    <!-- Champs de formulaire -->
+   
+    <div class="form-group">
+        <label for="commentaire">Commentaire:</label>
+        <textarea formControlName="commentaire" id="commentaire" class="form-control" required></textarea>
+    </div><br/>
+    <div class="form-group">
+        <label for="dateFeedback">Date:</label>
+        <input type="date" formControlName="dateFeedback" id="dateFeedback" class="form-control" required>
+    </div><br/>
+    <div class="form-group">
+        <label for="note">Note:</label>
+        <input type="number" formControlName="note" id="note" class="form-control" required>
+    </div>
+<br/><br/>
+
+    <!-- Boutons -->
+    <div class="row justify-content-center">
+        <div class="col-md-6 text-center">
+    <button type="submit" class="btn btn-primary"style="margin-right: 150px;">Save</button>
+    <button type="button" class="btn btn-secondary" (click)="cancelEdit()">Cancel</button> </div>
+</div>
+</form>

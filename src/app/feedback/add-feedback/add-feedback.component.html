@@ -1,0 +1,42 @@
+<div class="container mt-5">
+    <div class="row justify-content-center">
+      <div class="col-md-8">
+        <h3 class="text-center mb-4">Create a New Feedback</h3>
+        <form *ngIf="feedbackForm" [formGroup]="feedbackForm" (ngSubmit)="onSubmit()">
+          <div class="mb-3">
+            <label class="form-label">Feedback:</label>
+            <input class="form-control" formControlName="commentaire" placeholder="Comment" required>
+            <div *ngIf="(feedbackForm.get('commentaire')?.invalid && feedbackForm.get('commentaire')?.touched) || (feedbackForm.get('commentaire')?.value === '' && feedbackForm.get('commentaire')?.touched)" class="text-danger">
+              * Required
+            </div>
+          </div>
+  
+          <div class="mb-3">
+            <label class="form-label">Feedback Date:</label>
+            <input class="form-control" type="date" formControlName="dateFeedback" placeholder="Feedback Date" required>
+            <div *ngIf="(feedbackForm.get('dateFeedback')?.invalid && feedbackForm.get('dateFeedback')?.touched) || (feedbackForm.get('dateFeedback')?.value === '' && feedbackForm.get('dateFeedback')?.touched)" class="text-danger">
+              * Required
+            </div>
+          </div>
+  
+          <div class="mb-3">
+            <label class="form-label">Note:</label>
+            <input class="form-control" type="number" formControlName="note" placeholder="Note" required>
+            <div *ngIf="(feedbackForm.get('note')?.invalid && feedbackForm.get('note')?.touched) || (feedbackForm.get('note')?.value === '' && feedbackForm.get('note')?.touched)" class="text-danger">
+              * Required
+            </div>
+          </div>
+  
+          <div class="row justify-content-center">
+            <div class="col-md-6 text-center">
+              <button class="btn btn-primary" type="button" (click)="cancel()" style="margin-right: 150px;">Cancel</button>
+              <button class="btn btn-primary" type="submit" [disabled]="!feedbackForm.valid">Submit</button>
+            </div>
+          </div>
+          
+          
+              </form>
+      </div>
+    </div>
+  </div>
+  
