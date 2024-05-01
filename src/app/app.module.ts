@@ -15,6 +15,8 @@ import { AddFeedbackComponent } from './feedback/add-feedback/add-feedback.compo
 import { EditFeedbackComponent } from './feedback/edit-feedback/edit-feedback.component';
 import { ReservationListComponent } from './reservation/reservation-list/reservation-list.component';
 import { ReservationAddComponent } from './reservation/reservation-add/reservation-add.component';
+import { LoginComponent } from './models/utilisateur/login/login.component';
+import { SigninComponent } from './models/utilisateur/signin/signin.component';
 
 
 @NgModule({
@@ -27,8 +29,9 @@ import { ReservationAddComponent } from './reservation/reservation-add/reservati
     EditFeedbackComponent,
     ReservationListComponent,
     ReservationAddComponent,
-   
-   
+    LoginComponent,
+    SigninComponent,
+
   ],
   imports: [
     CommonModule,

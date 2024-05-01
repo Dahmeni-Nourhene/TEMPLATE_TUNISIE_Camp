@@ -1,0 +1,82 @@
+<div class="col-md-12">
+    <div class="card card-container">
+        <form
+            name="registerForm"
+            (ngSubmit)="registerForm.valid && register()"
+            #registerForm="ngForm"
+            novalidate
+            class="register-form"
+        >
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input
+                    type="email"
+                    class="form-control"
+                    name="email"
+                    [(ngModel)]="utilisateur.email"
+                    required
+                    email
+                    #email="ngModel"
+                    [ngClass]="{ 'is-invalid': registerForm.submitted && email.invalid }"
+                />
+                <div *ngIf="email.invalid && (registerForm.submitted || email.touched)" class="invalid-feedback">
+                    <div *ngIf="email.errors?.['required']">Email is required</div>
+                    <div *ngIf="email.errors?.['email']">Invalid email format</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input
+                    type="password"
+                    class="form-control"
+                    name="password"
+                    [(ngModel)]="utilisateur.password"
+                    required
+                    minlength="6"
+                    #password="ngModel"
+                    [ngClass]="{ 'is-invalid': registerForm.submitted && password.invalid }"
+                />
+                <div *ngIf="password.invalid && (registerForm.submitted || password.touched)" class="invalid-feedback">
+                    <div *ngIf="password.errors?.['required']">Password is required</div>
+                    <div *ngIf="password.errors?.['minlength']">Password must be at least 6 characters</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="nom">Nom</label>
+                <input
+                    type="text"
+                    class="form-control"
+                    name="nom"
+                    [(ngModel)]="utilisateur.nom"
+                    required
+                    #nom="ngModel"
+                    [ngClass]="{ 'is-invalid': registerForm.submitted && nom.invalid }"
+                />
+                <div *ngIf="nom.invalid && (registerForm.submitted || nom.touched)" class="invalid-feedback">
+                    <div *ngIf="nom.errors?.['required']">Nom is required</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="prenom">Prenom</label>
+                <input
+                    type="text"
+                    class="form-control"
+                    name="prenom"
+                    [(ngModel)]="utilisateur.prenom"
+                    required
+                    #prenom="ngModel"
+                    [ngClass]="{ 'is-invalid': registerForm.submitted && prenom.invalid }"
+                />
+                <div *ngIf="prenom.invalid && (registerForm.submitted || prenom.touched)" class="invalid-feedback">
+                    <div *ngIf="prenom.errors?.['required']">Prenom is required</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <button class="btn btn-primary btn-block" type="submit">Register</button>
+            </div>
+            <div>
+                Already have an account click here: <a href="/login">login</a>
+            </div>
+        </form>
+    </div>
+</div>
