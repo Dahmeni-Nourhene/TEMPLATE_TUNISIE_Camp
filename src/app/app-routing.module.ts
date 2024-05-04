@@ -37,6 +37,7 @@ export const Approutes: Routes = [
       { path: 'edit-feedback/:id', component: EditFeedbackComponent },
       { path: 'list-reservation', component: ReservationListComponent },
       { path: 'add-reservation', component: ReservationAddComponent },
+      { path: 'add'}
     ]
   },
   {
