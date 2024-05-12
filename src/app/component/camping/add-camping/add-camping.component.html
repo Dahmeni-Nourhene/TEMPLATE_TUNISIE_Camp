@@ -1,0 +1,43 @@
+<div class="container mt-5">
+    <div class="row justify-content-center">
+      <div class="col-md-8">
+        <h3 class="text-center mb-4">Create a New Feedback</h3>
+        <form *ngIf="feedbackForm" [formGroup]="feedbackForm" (ngSubmit)="onSubmit()">
+          <div class="mb-3">
+            <label class="form-label">Nom:</label>
+            <input class="form-control" formControlName="nom" placeholder="nom" required>
+            <div *ngIf="(feedbackForm.get('nom')?.invalid && feedbackForm.get('nom')?.touched) || (feedbackForm.get('nom')?.value === '' && feedbackForm.get('nom')?.touched)" class="text-danger">
+              * Nom is Required
+            </div>
+        
+          </div>
+  
+          <div class="mb-3">
+            <label class="form-label">Adresse:</label>
+            <input class="form-control" type="text" formControlName="adresse" placeholder="adresse" required>
+            <div *ngIf="(feedbackForm.get('adresse')?.invalid && feedbackForm.get('adresse')?.touched) || (feedbackForm.get('adresse')?.value === '' && feedbackForm.get('adresse')?.touched)" class="text-danger">
+              * Adresse is Required
+            </div>
+          </div>
+  
+          <div class="mb-3">
+            <label class="form-label">Description:</label>
+            <input class="form-control" type="text" formControlName="description" placeholder="description" required>
+            <div *ngIf="(feedbackForm.get('description')?.invalid && feedbackForm.get('description')?.touched) || (feedbackForm.get('description')?.value === '' && feedbackForm.get('description')?.touched)" class="text-danger">
+              *Description is Required
+            </div>
+          </div>
+  
+          <div class="row justify-content-center">
+            <div class="col-md-6 text-center">
+              <button class="btn btn-primary" type="button" (click)="cancel()" style="margin-right: 150px;">Cancel</button>
+              <button class="btn btn-primary" type="submit" [disabled]="!feedbackForm.valid">Submit</button>
+            </div>
+          </div>
+          
+          
+              </form>
+      </div>
+    </div>
+  </div>
+  

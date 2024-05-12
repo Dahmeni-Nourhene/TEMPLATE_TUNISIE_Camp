@@ -1,18 +1,18 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { CentreCamping } from '../models/centre-camping/centre-camping.module';
+import { CentreCamping } from '../models/centre-camping/centre-camping.model';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CentreCampingService {
-  private apiUrl = 'http://localhost:8080/api/centrecamping'; // URL de votre API
+  private apiUrl = 'http://localhost:8082/centres-camping'; // URL de votre API
 
   constructor(private http: HttpClient) {}
 
   createCentreCamping(centreCamping: CentreCamping): Observable<CentreCamping> {
-    return this.http.post<CentreCamping>(this.apiUrl, centreCamping, {
+    return this.http.post<CentreCamping>(`${this.apiUrl}/create`, centreCamping, {
       headers: new HttpHeaders({
         'Content-Type': 'application/json'
       })
@@ -24,7 +24,7 @@ export class CentreCampingService {
   }
 
   getAllCentreCampings(): Observable<CentreCamping[]> {
-    return this.http.get<CentreCamping[]>(this.apiUrl);
+    return this.http.get<CentreCamping[]>(`${this.apiUrl}/all`);
   }
 
   updateCentreCamping(id: number, centreCamping: CentreCamping): Observable<CentreCamping> {
@@ -36,6 +36,6 @@ export class CentreCampingService {
   }
 
   deleteCentreCamping(id: number): Observable<void> {
-    return this.http.delete<void>(`${this.apiUrl}/${id}`);
+    return this.http.delete<void>(`${this.apiUrl}/delete/${id}`);
   }
 }

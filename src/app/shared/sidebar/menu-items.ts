@@ -19,6 +19,14 @@ export const ROUTES: RouteInfo[] = [
     submenu: []
   },
   {
+    path: '/camping',
+    title: 'Centre Camping',
+    icon: 'bi bi-tree',
+    class: '',
+    extralink: false,
+    submenu: []
+  },
+  {
     path: '/list-reservation',
     title: 'Reservation',
     icon: 'bi bi-patch-check',

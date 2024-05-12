@@ -7,6 +7,9 @@ import { AddFeedbackComponent } from './feedback/add-feedback/add-feedback.compo
 import { EditFeedbackComponent } from './feedback/edit-feedback/edit-feedback.component';
 import { ReservationListComponent } from './reservation/reservation-list/reservation-list.component';
 import { ReservationAddComponent } from './reservation/reservation-add/reservation-add.component';
+import { CentreCamping } from './models/centre-camping/centre-camping.model';
+import { CentrecampingComponent } from './component/camping/centrecamping/centrecamping.component';
+import { AddCampingComponent } from './component/camping/add-camping/add-camping.component';
 
 
 // Importez vos composants
@@ -23,6 +26,10 @@ export const Approutes: Routes = [
         loadChildren: () => import('./dashboard/dashboard.module').then(m => m.DashboardModule)
       },
       {
+        path: 'camping',
+        component:CentrecampingComponent
+      },
+      {
         path: 'about',
         loadChildren: () => import('./about/about.module').then(m => m.AboutModule)
       },
@@ -37,7 +44,9 @@ export const Approutes: Routes = [
       { path: 'edit-feedback/:id', component: EditFeedbackComponent },
       { path: 'list-reservation', component: ReservationListComponent },
       { path: 'add-reservation', component: ReservationAddComponent },
-      { path: 'add'}
+      { path: 'add-camping', component: AddCampingComponent }
+
+ 
     ]
   },
   {
