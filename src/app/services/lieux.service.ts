@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 })
 export class LieuxService {
 
-  private apiUrl = 'http://localhost:8080/api/lieux';  // Adaptez l'URL selon votre configuration
+  private apiUrl = 'http://localhost:8082/lieux';  // Adaptez l'URL selon votre configuration
 
   constructor(private http: HttpClient) { }
 

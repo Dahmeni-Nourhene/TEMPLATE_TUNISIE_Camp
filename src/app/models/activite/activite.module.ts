@@ -10,7 +10,7 @@ import { Lieux } from '../lieux/lieux.module';
     CommonModule
   ]
 })
-export class ActiviteModule {
+export class Activite {
   idAct!: number;
   nomActivite!: string;
   description!: string;

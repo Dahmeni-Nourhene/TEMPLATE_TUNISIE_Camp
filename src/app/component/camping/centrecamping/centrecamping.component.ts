@@ -48,9 +48,11 @@ export class CentrecampingComponent {
   }
 
   editFeedback(camping: CentreCamping): void {
-    this.router.navigate(['../edit-feedback', camping.idCentre]);
+    this.router.navigate(['../edit-camping', camping.idCentre]);
   }
 
-  
+  goToLieux(){
+    this.router.navigate(['/lieux'])
+  }
 }
 

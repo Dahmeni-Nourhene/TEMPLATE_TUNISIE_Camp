@@ -15,6 +15,10 @@ import { TableComponent } from "../feedback/feedback-list/table.component";
 import { CentrecampingComponent } from './camping/centrecamping/centrecamping.component';
 import { AddCampingComponent } from './camping/add-camping/add-camping.component';
 import { EditCampingComponent } from './camping/edit-camping/edit-camping.component';
+import { LieuxCampingComponent } from './camping/lieux-camping/lieux-camping.component';
+import { EditLieuxComponent } from './camping/edit-lieux/edit-lieux.component';
+import { ActivitesComponent } from './camping/centrecamping/activites/activites.component';
+import { EditActivitesComponent } from './camping/centrecamping/edit-activites/edit-activites.component';
 
 @NgModule({
   imports: [
@@ -34,7 +38,11 @@ import { EditCampingComponent } from './camping/edit-camping/edit-camping.compon
   declarations: [
     CentrecampingComponent,
     AddCampingComponent,
-    EditCampingComponent
+    EditCampingComponent,
+    LieuxCampingComponent,
+    EditLieuxComponent,
+    ActivitesComponent,
+    EditActivitesComponent
   ],
 })
 export class ComponentsModule { }

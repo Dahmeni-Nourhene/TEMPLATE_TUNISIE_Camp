@@ -10,6 +10,11 @@ import { ReservationAddComponent } from './reservation/reservation-add/reservati
 import { CentreCamping } from './models/centre-camping/centre-camping.model';
 import { CentrecampingComponent } from './component/camping/centrecamping/centrecamping.component';
 import { AddCampingComponent } from './component/camping/add-camping/add-camping.component';
+import { EditCampingComponent } from './component/camping/edit-camping/edit-camping.component';
+import { LieuxCampingComponent } from './component/camping/lieux-camping/lieux-camping.component';
+import { EditLieuxComponent } from './component/camping/edit-lieux/edit-lieux.component';
+import { ActivitesComponent } from './component/camping/centrecamping/activites/activites.component';
+import { EditActivitesComponent } from './component/camping/centrecamping/edit-activites/edit-activites.component';
 
 
 // Importez vos composants
@@ -44,9 +49,12 @@ export const Approutes: Routes = [
       { path: 'edit-feedback/:id', component: EditFeedbackComponent },
       { path: 'list-reservation', component: ReservationListComponent },
       { path: 'add-reservation', component: ReservationAddComponent },
-      { path: 'add-camping', component: AddCampingComponent }
-
- 
+      { path: 'add-camping', component: AddCampingComponent },
+      { path: 'edit-camping/:id', component: EditCampingComponent },
+      { path: 'lieux', component: LieuxCampingComponent },
+      { path: 'edit-lieux/:id', component: EditLieuxComponent },
+      { path: 'activites', component: ActivitesComponent },
+      { path: 'edit-activites/:id', component: EditActivitesComponent }
     ]
   },
   {

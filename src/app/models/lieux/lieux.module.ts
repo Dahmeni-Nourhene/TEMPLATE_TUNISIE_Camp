@@ -14,8 +14,8 @@ export class Lieux {
   public idLieux!: number;
   public nom!: string;
   public description!: string;
-  public capacite!: number;
-  public tarifNuit!: number;
+  public capacite!: string;
+  public tarifNuit!: string;
   public centreCamping!: string;  
   public activites!: string;    
 

@@ -33,6 +33,7 @@ export class AddCampingComponent {
             
                 this.feedbackService.createCentreCamping(feedbackData).subscribe(() => {
                   console.log("added successfully!")
+                  this.router.navigate(['/camping']);
                 }, (error: any) => {
                   console.log("error:",error)
                 });

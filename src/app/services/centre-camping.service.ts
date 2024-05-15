@@ -28,7 +28,7 @@ export class CentreCampingService {
   }
 
   updateCentreCamping(id: number, centreCamping: CentreCamping): Observable<CentreCamping> {
-    return this.http.put<CentreCamping>(`${this.apiUrl}/${id}`, centreCamping, {
+    return this.http.put<CentreCamping>(`${this.apiUrl}/update/${id}`, centreCamping, {
       headers: new HttpHeaders({
         'Content-Type': 'application/json'
       })
