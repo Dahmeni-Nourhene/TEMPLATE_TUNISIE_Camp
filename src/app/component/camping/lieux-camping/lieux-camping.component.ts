@@ -29,6 +29,7 @@ export class LieuxCampingComponent {
     if (!keyword) {
       this.centreCampingService.getAllLieux().subscribe((data: Lieux[]) => {
         this.campings = data;
+        console.log("cdate", data)
       });
     }
   }

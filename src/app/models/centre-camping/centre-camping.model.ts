@@ -1,6 +1,8 @@
+import { Lieux } from "../reservation/reservation.model";
+
 export interface CentreCamping {
   idCentre: number;
-  lieux: string;
+  lieuxs: Lieux[];
   adresse: string;
   nom: string;
   description:string;

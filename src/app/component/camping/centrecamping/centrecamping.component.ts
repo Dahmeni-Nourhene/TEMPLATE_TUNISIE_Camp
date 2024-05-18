@@ -26,10 +26,10 @@ export class CentrecampingComponent {
 
   loadCampings(): void {
     const keyword = this.searchKeyword ? this.searchKeyword.trim() : ''; // Trim seulement si searchKeyword n'est pas null
-
     if (!keyword) {
       this.centreCampingService.getAllCentreCampings().subscribe((data: CentreCamping[]) => {
         this.campings = data;
+        console.log("data;",data)
       });
     }
   }
@@ -44,7 +44,7 @@ export class CentrecampingComponent {
         this.loadCampings();
         console.log("idee",id)
       });
-    
+
   }
 
   editFeedback(camping: CentreCamping): void {

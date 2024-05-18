@@ -31,6 +31,7 @@ export class ActivitesComponent {
     if (!keyword) {
       this.centreCampingService.getAllActivites().subscribe((data: Activite[]) => {
         this.campings = data;
+        console.log(data,"datra")
       });
     }
   }

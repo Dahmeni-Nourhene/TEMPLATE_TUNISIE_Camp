@@ -8,9 +8,7 @@
                         <button class="btn btn-primary" [routerLink]="['../add-camping']">Create a new lieux camping center</button>
                     </div>
                 </div><br/><div class="row">
-                    <div class="col-md-6">
-                      <input type="text" [(ngModel)]="searchKeyword" placeholder="Search by Comment" class="form-control">
-                    </div>
+                 
                   </div>
                   <br/>
                 <h4 class="card-title">Lieux Center Camping</h4>
@@ -47,7 +45,7 @@
                                 </td>
                                 <td>
 
-                                    {{camping.activites}}
+                                    <li *ngFor="let lieu of camping.activites"> {{camping.nom}}</li>
                                 </td>
                                 <td>
                                     <!-- Boutons d'édition et de suppression -->

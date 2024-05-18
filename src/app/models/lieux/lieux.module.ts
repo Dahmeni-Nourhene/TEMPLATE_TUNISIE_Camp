@@ -1,23 +1,14 @@
-import { Inject, NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { CentreCamping } from "../centre-camping/centre-camping.model";
 
-
-
-@NgModule({
-  declarations: [],
-  imports: [
-    CommonModule
-  ]
-})
  
-export class Lieux {
-  public idLieux!: number;
-  public nom!: string;
-  public description!: string;
-  public capacite!: string;
-  public tarifNuit!: string;
-  public centreCamping!: string;  
-  public activites!: string;    
+export interface Lieux {
+   idLieux: number;
+   nom: string;
+   description: string;
+   capacite: string;
+   tarifNuit: string;
+   centreCamping: CentreCamping;  
+   activites: string;    
 
 }
 
